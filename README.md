@@ -1,3 +1,5 @@
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
 # precommit-hook-xml
 
 The repository contains hooks for XML files.
@@ -7,7 +9,7 @@ The repository contains hooks for XML files.
 Add this to your `.pre-commit-config.yaml`
 
 ```
--   repo: https://github.com/pre-commit/pre-commit-hooks
+-   repo: https://github.com/dimka-abramov/precommit-hook-xml
     rev: 1.0.2  # Use the ref you want to point at
     hooks:
     -   id: format-xml
