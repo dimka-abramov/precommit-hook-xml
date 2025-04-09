@@ -13,13 +13,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         with open(filename, 'r') as f:
             lines = f.readlines()
 
+        changed = False
         with open(filename, 'w') as f:
             for line in lines:
                 if line.strip():
                     f.write(line)
                 else:
-                    print(f'{filename}: The file has been changed ({filename})')
+                    changed = True
                     retval = 1
+                    
+        if changed:
+            print(f'{filename}: The file has been changed ({filename})')
         
     return retval
 
