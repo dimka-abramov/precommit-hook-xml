@@ -1,0 +1,12 @@
+-   id: format-xml
+    name: format xml
+    description: formats the xml files with pretty format
+    entry: format-xml
+    language: python
+    types: [xml]
+-   id: remove-empty-lines
+    name: remove empty lines
+    description: removes empty lines from the text files
+    entry: remove-lines
+    language: python
+    types: [text]
