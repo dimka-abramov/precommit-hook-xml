@@ -12,6 +12,12 @@ def calculate_md5(filename: str) -> str:
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
 
+def pretty_print_xml_file(filename: str) -> None:
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse(filename, parser)
+    with open(filename, "wb") as f:
+        f.write(etree.tostring(tree, pretty_print=True, encoding='UTF-8'))
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument('filenames', nargs='*', help='XML filenames to check.')
@@ -20,10 +26,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     retval = 0
     for filename in args.filenames:
         before = calculate_md5(filename)
-
-        tree = etree.parse(filename)
-        tree.write(filename, pretty_print=True, encoding='UTF-8', xml_declaration=True)
-
+        pretty_print_xml_file(filename)
         after = calculate_md5(filename)
         if before != after:
             print(f'{filename}: The file has been changed ({filename})')
