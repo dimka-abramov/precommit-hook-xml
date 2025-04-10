@@ -14,8 +14,7 @@ def calculate_md5(filename: str) -> str:
 
 def pretty_print_xml_file(filename: str) -> None:
     tree = etree.parse(filename)
-    with open(filename, "wb") as f:
-        f.write(etree.tostring(tree, pretty_print=True, encoding='UTF-8', xml_declaration=True))
+    tree.write(filename, pretty_print=True, encoding='UTF-8', xml_declaration=True)
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
