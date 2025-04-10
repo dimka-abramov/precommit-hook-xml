@@ -13,10 +13,9 @@ def calculate_md5(filename: str) -> str:
     return hash_md5.hexdigest()
 
 def pretty_print_xml_file(filename: str) -> None:
-    parser = etree.XMLParser(remove_blank_text=True)
-    tree = etree.parse(filename, parser)
+    tree = etree.parse(filename)
     with open(filename, "wb") as f:
-        f.write(etree.tostring(tree, pretty_print=True, encoding='UTF-8'))
+        f.write(etree.tostring(tree, pretty_print=True, encoding='UTF-8', xml_declaration=True))
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()

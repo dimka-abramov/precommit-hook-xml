@@ -10,7 +10,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```
 -   repo: https://github.com/dimka-abramov/precommit-hook-xml
-    rev: 1.0.5  # Use the ref you want to point at
+    rev: 1.0.6  # Use the ref you want to point at
     hooks:
     -   id: format-xml
     -   id: remove-empty-lines 
@@ -22,7 +22,7 @@ The example configuration file to run the checks on `your.gnucash` file.
 ```
 repos:
 -   repo: https://github.com/dimka-abramov/precommit-hook-xml
-    rev: 1.0.5
+    rev: 1.0.6
     hooks:
     -   id: format-xml
         types: [file]
