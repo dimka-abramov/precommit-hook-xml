@@ -6,9 +6,11 @@ import lxml.etree as etree
 from collections.abc import Sequence
 
 def calculate_md5(filename: str) -> str:
-    with open(filename, 'rb') as f:
-        md5_hash = hashlib.md5(f.read()).hexdigest()
-    return md5_hash
+    hash_md5 = hashlib.md5()
+    with open(filename, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
