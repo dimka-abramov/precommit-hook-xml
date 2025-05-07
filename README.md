@@ -10,10 +10,11 @@ Add this to your `.pre-commit-config.yaml`
 
 ```
 -   repo: https://github.com/dimka-abramov/precommit-hook-xml
-    rev: 1.0.7 # Use the ref you want to point at
+    rev: 1.0.8 # Use the ref you want to point at
     hooks:
+    -   id: remove-leading-whitespaces
     -   id: format-xml
-    -   id: remove-empty-lines 
+    -   id: remove-empty-lines
 ```
 
 The hooks in this repository can be used to solve problem of big diffs for GnuCash XML files.
@@ -22,8 +23,10 @@ The example configuration file to run the checks on `your.gnucash` file.
 ```
 repos:
 -   repo: https://github.com/dimka-abramov/precommit-hook-xml
-    rev: 1.0.7
+    rev: 1.0.8
     hooks:
+    -   id: remove-leading-whitespaces
+        files: your.gnucash
     -   id: format-xml
         types: [file]
         files: your.gnucash
@@ -33,8 +36,11 @@ repos:
 
 ## Hooks available
 
+### remove-leading-whitespaces
+The hook removes leading whitespaces from text files.
+
 ### format-xml
 The hook formats the XML files and makes them pretty.
 
 ### remove-empty-lines
-The hook removes lines only with space characters from all text files.
+The hook removes lines only with space characters from text files.
