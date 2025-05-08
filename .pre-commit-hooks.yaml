@@ -13,6 +13,6 @@
 -   id: remove-leading-whitespaces
     name: remove leading whitespaces
     description: removes leading whitespaces from the text files
-    entry: remove_leading
+    entry: remove-leading
     language: python
     types: [text]
