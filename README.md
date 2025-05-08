@@ -10,7 +10,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```
 -   repo: https://github.com/dimka-abramov/precommit-hook-xml
-    rev: 1.0.8 # Use the ref you want to point at
+    rev: 1.0.11 # Use the ref you want to point at
     hooks:
     -   id: remove-leading-whitespaces
     -   id: format-xml
@@ -23,7 +23,7 @@ The example configuration file to run the checks on `your.gnucash` file.
 ```
 repos:
 -   repo: https://github.com/dimka-abramov/precommit-hook-xml
-    rev: 1.0.8
+    rev: 1.0.11
     hooks:
     -   id: remove-leading-whitespaces
         files: your.gnucash
